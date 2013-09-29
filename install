@@ -1,0 +1,5 @@
+#!/bin/sh 
+
+mkdir $HOME/bin
+cp bin/cgitrep $HOME/bin
+
