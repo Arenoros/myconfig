@@ -5,7 +5,13 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+export TERM='xterm-256color'
+POWERLINE_RIGHT_A="exit-status"
+POWERLINE_FULL_CURRENT_PATH="false"
+POWERLINE_SHOW_GIT_ON_RIGHT="true"
+POWERLINE_DETECT_SSH="true"
+
+ZSH_THEME="powerline"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -40,7 +46,7 @@ export UPDATE_ZSH_DAYS=1
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby text mate ruby lighthouse osx colorize copydir copyfile cp debian encode64 extract mercurial profiles rvm tmux zsh-syntax-highlighting)
+plugins=(heroku git ruby text mate ruby lighthouse osx colorize copydir copyfile cp debian encode64 extract mercurial profiles rvm tmux systemd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rvm/bin:$HOME/.bin
 source ~/.zprofile
  # Add RVM to PATH for scripting
- 
+
 function _update_ps1()
 {
   export PROMPT="$(~/.oh-my-zsh/powerline-zsh.py $?)"
@@ -58,4 +64,5 @@ precmd()
 {
   _update_ps1
 }
-export TERM='xterm-256color'
+
+
